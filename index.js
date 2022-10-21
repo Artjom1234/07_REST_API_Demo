@@ -18,3 +18,15 @@ app.get('/store',(req,res) =>{
         hasLogo: false
     })
 });
+
+// Endpoint POST
+app.post('/store/:id',(req,res) =>{
+    const{id}= req.params;
+    const{logo}= req.body;
+    if(!logo){
+        res.status(418).send({message: "Wir brauchen ein LOGO!"})
+    }
+    res.send({
+        tshirt: `T-Shirt with your ${logo} und ID of ${id}`
+    })
+});
