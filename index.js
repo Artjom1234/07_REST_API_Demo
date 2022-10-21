@@ -2,6 +2,7 @@
 const express =require('express');
 const app = express();
 const PORT = 8080;
+app.use(express.json());
 
 // Listener
 app.listen(
@@ -30,3 +31,4 @@ app.post('/store/:id',(req,res) =>{
         tshirt: `T-Shirt with your ${logo} und ID of ${id}`
     })
 });
+
